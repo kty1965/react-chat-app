@@ -161,16 +161,32 @@ class App extends Component {
     }
     return (
       <div>
-        <div style={ S('pl-15') }>
-          <h2>React Chat App</h2>
-          <div ref="messages_scroll_area" style={ scroll_area_style }>
-            <ul style={ S('p-0') }>{ messages_list }</ul>
+        <nav className="navbar navbar-default">
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <a className="navbar-brand" href="#">
+                <img alt="Brand" src="#"></img>
+              </a>
+              <p className="navbar-text">I Love House Music</p>
+            </div>
           </div>
-        </div>
-        <div style={ S('absolute b-0 w-100p pl-15 pr-15') }>
-          <form onSubmit={ this.handleSubmit.bind(this) }>
-            { form_input }
-          </form>
+        </nav>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8">
+              <div style={ S('') }>
+                <h2>React Chat App</h2>
+                <div ref="messages_scroll_area" style={ scroll_area_style }>
+                  <ul style={ S('p-0') }>{ messages_list }</ul>
+                </div>
+              </div>
+              <div style={ S('b-0 w-100p') }>
+                <form onSubmit={ this.handleSubmit.bind(this) }>
+                  { form_input }
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
