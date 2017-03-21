@@ -156,7 +156,7 @@ class App extends Component {
       })
     }
     const scroll_area_style = {
-      ...S('h-' + (window.innerHeight - 140)),
+      ...S('h-' + (300)),
       overflowY: 'scroll'
     }
     return (
@@ -173,7 +173,16 @@ class App extends Component {
         </nav>
         <div className="container">
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-8 col-sm-12">
+              // 나중에 component로 빼고, componentDidMount로 attribute 추가
+              <div style={ S('relaitve w-100p h-0 pb-56.25p') }>
+                <iframe
+                  src="//www.youtube.com/embed/EdHO3l9qKa8"
+                  style={ S('absolute t-0 l-0 w-100p h-100p')}
+                />
+              </div>
+            </div>
+            <div className="col-md-4 col-sm-12">
               <div style={ S('') }>
                 <h2>React Chat App</h2>
                 <div ref="messages_scroll_area" style={ scroll_area_style }>
