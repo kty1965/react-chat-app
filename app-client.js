@@ -169,7 +169,7 @@ class App extends Component {
                 href="http://cafe.naver.com/housemusicmixset"
                 target="_blank"
               >
-                <img alt="Brand" src="./images/logo.png"
+                <img alt="Brand" src={require('./images/logo.png')}
                   style={ S('w-32') }
                 />
               </a>

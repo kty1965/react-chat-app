@@ -28,11 +28,33 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 var image_loaders = {
-  test: /\.(png|jpg)$/,
-  loader: 'url?limit=25000',
-  exclude: /node_modules/
+  test: /\.(gif|png|jpe?g|svg)$/i,
+  loaders: [
+    'file?hash=sha512&digest=hex&name=[hash].[ext]',
+    'image-webpack'
+  ]
 }
 loaders.push(image_loaders)
+
+var imageWebpackLoader = {
+  mozjpeg: {
+    quality: 65
+  },
+  pngquant:{
+    quality: "65-90",
+    speed: 4
+  },
+  svgo:{
+    plugins: [
+      {
+        removeViewBox: false
+      },
+      {
+        removeEmptyAttrs: false
+      }
+    ]
+  }
+}
 
 module.exports = {
   devtool: 'source-map',
@@ -43,7 +65,8 @@ module.exports = {
     publicPath: '/dist/'
   },
   module: {
-    loaders: loaders
+    loaders: loaders,
+    imageWebpackLoader: imageWebpackLoader
   },
   plugins: [
     new webpack.DefinePlugin({
