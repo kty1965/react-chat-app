@@ -164,20 +164,36 @@ class App extends Component {
         <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
-              <a className="navbar-brand" href="#">
-                <img alt="Brand" src="#"></img>
+              <a
+                className="navbar-brand"
+                href="http://cafe.naver.com/housemusicmixset"
+                target="_blank"
+              >
+                <img alt="Brand" src="./images/logo.png"
+                  style={ S('w-32') }
+                />
               </a>
-              <p className="navbar-text">I Love House Music</p>
+              <a
+                className="navbar-text"
+                href="http://cafe.naver.com/housemusicmixset"
+                target="_blank"
+              >
+                I Love House Music
+              </a>
             </div>
           </div>
         </nav>
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-sm-12">
-              <div className="embed-responsive embed-responsive-16by9">
+              <div
+                style={ S('br-4') }
+                className="embed-responsive embed-responsive-16by9"
+              >
                 <iframe
-                  src="//www.youtube.com/embed/EdHO3l9qKa8"
+                  src="//www.youtube.com/embed/jKrDfGoHlD4"
                   className="embed-responsive-item"
+                  allowFullScreen
                 />
               </div>
             </div>
@@ -193,6 +209,11 @@ class App extends Component {
                   { form_input }
                 </form>
               </div>
+            </div>
+          </div>
+          <div className="container">
+            <div className="text-center">
+              All right reserved.
             </div>
           </div>
         </div>

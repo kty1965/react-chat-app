@@ -20,12 +20,20 @@ loaders.push(js_loaders)
 // Development loaders
 if(process.env.NODE_ENV === 'development'){
   var es_lint = {
-    test: /\.js$/, 
+    test: /\.js$/,
     loader: 'eslint-loader',
     exclude: /node_modules/
   }
   loaders.push(es_lint)
 }
+
+var image_loaders = {
+  test: /\.(png|jpg)$/,
+  loader: 'url?limit=25000',
+  exclude: /node_modules/
+}
+loaders.push(image_loaders)
+
 module.exports = {
   devtool: 'source-map',
   entry: './app-client.js',
