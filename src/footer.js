@@ -21,7 +21,7 @@ class Footer extends Component {
               <img alt="Brand" src={require('../images/naver-cafe.png')}
                 style={ S('w-14 h-14 mr-5 mb-3') }
               />
-              I Love House Music
+              I Love House Music (feat. Huy)
             </a>
           </div>
           <div className="pull-right text-muted">
