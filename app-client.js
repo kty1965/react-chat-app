@@ -8,9 +8,11 @@ import uuid from 'node-uuid'
 import S from 'shorti'
 import _ from 'lodash'
 import { Input } from 'react-bootstrap'
+import Youtube from './src/youtube'
+import Header from './src/header'
+import Footer from './src/footer'
 
 class App extends Component {
-
   constructor() {
     super()
     this.state = {
@@ -161,62 +163,32 @@ class App extends Component {
     }
     return (
       <div>
-        <nav className="navbar navbar-default">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <a
-                className="navbar-brand"
-                href="http://cafe.naver.com/housemusicmixset"
-                target="_blank"
-              >
-                <img alt="Brand" src={require('./images/logo.png')}
-                  style={ S('w-32') }
-                />
-              </a>
-              <a
-                className="navbar-text"
-                href="http://cafe.naver.com/housemusicmixset"
-                target="_blank"
-              >
-                I Love House Music
-              </a>
-            </div>
-          </div>
-        </nav>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 col-sm-12">
-              <div
-                style={ S('br-4') }
-                className="embed-responsive embed-responsive-16by9"
-              >
-                <iframe
-                  src="//www.youtube.com/embed/jKrDfGoHlD4"
-                  className="embed-responsive-item"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-            <div className="col-md-4 col-sm-12">
-              <div style={ S('') }>
-                <h2>React Chat App</h2>
-                <div ref="messages_scroll_area" style={ scroll_area_style }>
-                  <ul style={ S('p-0') }>{ messages_list }</ul>
+        <Header/>
+        <div style={ S('mh-100p') }>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-9 col-sm-12">
+                <div>
+                  <Youtube src="//www.youtube.com/embed/jKrDfGoHlD4" />
                 </div>
               </div>
-              <div style={ S('b-0 w-100p') }>
-                <form onSubmit={ this.handleSubmit.bind(this) }>
-                  { form_input }
-                </form>
+              <div className="col-md-3 col-sm-12">
+                <div style={ S('') }>
+                  <h4>Ultra Miami Live Chat</h4>
+                  <div ref="messages_scroll_area" style={ scroll_area_style }>
+                    <ul style={ S('p-0') }>{ messages_list }</ul>
+                  </div>
+                </div>
+                <div style={ S('b-0 w-100p mt-15') }>
+                  <form onSubmit={ this.handleSubmit.bind(this) }>
+                    { form_input }
+                  </form>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="text-center">
-              All right reserved.
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     )
   }
